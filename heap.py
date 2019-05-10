@@ -83,6 +83,8 @@ class priority_queue(max_heap):
         '''
         Increase the key of node i and keep heap structure.
         Compare the new key with parent and bubble up
+        Note: using -1 as index here will not work because of the while
+        loop condition
         '''
         A[i] = key
         while A[i] > A[self.parent(i)] and i > 0:
@@ -95,15 +97,15 @@ class priority_queue(max_heap):
         Insert a key into A and keep heap structure
         '''
         A.append(float('-inf'))
-        self.heap_increase_key(A, -1, key)
+        self.heap_increase_key(A, len(A)-1, key)
         
         
         
             
         
-            
-test = [11,1,3,2,16,9,10,14,8,7]
-heap = max_heap()
-heap.heapsort(test)
+if __name__ == '__main__' :           
+    test = [11,1,3,2,16,9,10,14,8,7]
+
+
 
         
